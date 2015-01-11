@@ -1,9 +1,8 @@
-(PLUGIN AUTHOR: Please read [Plugin README conventions](https://github.com/wearefractal/gulp/wiki/Plugin-README-Conventions), then delete this line)
-
 # gulp-ng-annotate-check
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]
 
-> ng-annotate-check plugin for [gulp](https://github.com/wearefractal/gulp)
+> Check if any angularJS annotations is not missing.
+> Plugin is comparing source file with it's [ng-annotate](https://github.com/olov/ng-annotate) version and if they are not same it returns missing annotations.
 
 ## Usage
 
@@ -16,24 +15,37 @@ npm install --save-dev gulp-ng-annotate-check
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var ng-annotate-check = require("gulp-ng-annotate-check");
+var ngAnnotateCheck = require("gulp-ng-annotate-check");
 
-gulp.src("./src/*.ext")
-	.pipe(ng-annotate-check({
-		msg: "Hello Gulp!"
-	}))
-	.pipe(gulp.dest("./dist"));
+gulp.src("./src/*.js")
+	.pipe(ngAnnotateCheck({
+	        options: {"single_quotes": true}
+		callback: function (diff, fileName) {
+				console.log(fileName);
+				console.log(diff);
+			}
+		
+	}));
 ```
 
 ## API
 
-### ng-annotate-check(options)
+### ngAnnotateCheck(options)
 
-#### options.msg
-Type: `String`  
-Default: `Hello World`
+#### options.options
+Type: `Object`  
+Default: `{}`
 
-The message you wish to attach to file.
+##### options.options.single_quotes
+Options passed to ng-annotate module. 
+Type: `Boolean`  
+Default: `false`
+
+Set to true if you are using single quotes in your angular app.
+It prevent from unnecessary differences.
+
+
+[All options](https://github.com/olov/ng-annotate/blob/master/ng-annotate.js).
 
 
 ## License
