@@ -56,7 +56,7 @@ Set to true if you are using single quotes in your angular app.
 It prevent from unnecessary differences.
 
 
-[All options.options](https://github.com/olov/ng-annotate/blob/master/ng-annotate.js).
+[All ng-annotate options](https://github.com/olov/ng-annotate/blob/master/ng-annotate.js).
 
 
 ## License
