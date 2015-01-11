@@ -19,7 +19,7 @@ var ngAnnotateCheck = require("gulp-ng-annotate-check");
 
 gulp.src("./src/*.js")
 	.pipe(ngAnnotateCheck({
-	        options: {"single_quotes": true}
+	        options: {"single_quotes": true},
 		callback: function (diff, fileName) {
 				console.log(fileName);
 				console.log(diff);
@@ -32,20 +32,31 @@ gulp.src("./src/*.js")
 
 ### ngAnnotateCheck(options)
 
+
+#### options.callback
+Type: `Function`
+Required
+
+Parameters: 1. `diff` String and 2.`fileName`
+
+
 #### options.options
 Type: `Object`  
 Default: `{}`
 
-##### options.options.single_quotes
 Options passed to ng-annotate module. 
+
+
+##### options.options.single_quotes
 Type: `Boolean`  
 Default: `false`
 
 Set to true if you are using single quotes in your angular app.
+
 It prevent from unnecessary differences.
 
 
-[All options](https://github.com/olov/ng-annotate/blob/master/ng-annotate.js).
+[All options.options](https://github.com/olov/ng-annotate/blob/master/ng-annotate.js).
 
 
 ## License
