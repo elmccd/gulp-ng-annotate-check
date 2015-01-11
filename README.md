@@ -1,18 +1,19 @@
 # gulp-ng-annotate-check
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![Dependency Status][depstat-image]][depstat-url]
 
 > Check if any angularJS annotations is not missing.
 > Plugin is comparing source file with it's [ng-annotate](https://github.com/olov/ng-annotate) version and if they are not same it returns missing annotations.
 
 ## Usage
 
-First, install `gulp-ng-annotate-check` as a development dependency:
 
 ```shell
 npm install --save-dev gulp-ng-annotate-check
 ```
 
-Then, add it to your `gulpfile.js`:
 
 ```javascript
 var ngAnnotateCheck = require("gulp-ng-annotate-check");
@@ -20,12 +21,11 @@ var ngAnnotateCheck = require("gulp-ng-annotate-check");
 gulp.src("./src/*.js")
 	.pipe(ngAnnotateCheck({
 	        options: {"single_quotes": true},
-		callback: function (diff, fileName) {
-				console.log(fileName);
-				console.log(diff);
-			}
-		
-	}));
+		    	callback: function (diff, fileName) {
+						console.log(fileName);
+						console.log(diff);
+					}
+		}));
 ```
 
 ## API
@@ -58,7 +58,6 @@ It prevent from unnecessary differences.
 
 [All ng-annotate options](https://github.com/olov/ng-annotate/blob/master/ng-annotate.js).
 
-
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
@@ -70,7 +69,7 @@ It prevent from unnecessary differences.
 [travis-image]: https://secure.travis-ci.org/elmccd/gulp-ng-annotate-check.png?branch=master
 
 [coveralls-url]: https://coveralls.io/r/elmccd/gulp-ng-annotate-check
-[coveralls-image]: https://coveralls.io/repos/elmccd/gulp-ng-annotate-check/badge.png
+[coveralls-image]: https://img.shields.io/coveralls/elmccd/gulp-ng-annotate-check.svg
 
 [depstat-url]: https://david-dm.org/elmccd/gulp-ng-annotate-check
 [depstat-image]: https://david-dm.org/elmccd/gulp-ng-annotate-check.png
