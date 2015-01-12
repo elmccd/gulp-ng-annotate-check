@@ -17,7 +17,8 @@
   },
   "repository": "elmccd/gulp-ng-annotate-check",
   "files": [
-  	"index.js"
+  	"index.js",
+  	"ngAnnotateCheck.js"
   ],
   "scripts": {
     "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
