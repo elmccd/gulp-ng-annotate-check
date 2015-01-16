@@ -1,6 +1,6 @@
 {
   "name": "gulp-ng-annotate-check",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Checking if angular annotations are provided.",
   "keywords": [
     "gulpplugin",
@@ -25,11 +25,10 @@
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
-    "colors": "^1.0.3",
     "diff": "^1.2.1",
     "extend": "^2.0.0",
-    "gulp-util": "~2.2.0",
-    "ng-annotate": "^0.14.1",
+    "gulp-util": "~3.0.0",
+    "ng-annotate": "^0.15.0",
     "through2": "*"
   },
   "devDependencies": {
