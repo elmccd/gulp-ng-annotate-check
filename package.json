@@ -1,6 +1,6 @@
 {
   "name": "gulp-ng-annotate-check",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Checking if angular annotations are provided.",
   "keywords": [
     "gulpplugin",
@@ -28,7 +28,7 @@
     "diff": "^1.2.1",
     "extend": "^2.0.0",
     "gulp-util": "~3.0.0",
-    "ng-annotate": "^0.15.0",
+    "ng-annotate": "*",
     "through2": "*"
   },
   "devDependencies": {
